@@ -1,6 +1,5 @@
 # Test Back-End for ShawAndPartners
 ## Made with NodeJS version v16.14.2
-<img src="https://img.shields.io/static/v1?label=Overview&message=AASDFASDF&color=f8efd4&style=for-the-badge&logo=GitHub">
 
 ## ☕ 🚀 Install back-end-test-shawandpartners
 ```
