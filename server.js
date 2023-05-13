@@ -1,11 +1,19 @@
-import express, { response } from 'express'
-import api from "./Api.js";
-
+// server.js
+const express = require("express");
+const axios = require("axios")
+const baseUrl = 'https://api.github.com'
 const url = 'http://localhost'
 const port = 8080
 const app = express()
 
-app.listen(port, () => console.log(`Application 'back-end-test-shawandpartners' started at Port '${port}' `))
+const api = axios.create({
+    baseURL: baseUrl,
+    headers: {
+       'Accept': 'application/vnd.github+json',
+       'Content-Type': 'application/json',
+       'X-GitHub-Api-Version': '2022-11-28'
+     },
+})
 
 const listUsers = {
     urlNextPage: "",
@@ -56,3 +64,5 @@ app.get('/users/:username/repos', async(req, res) => {
         res.status(error.response.status).send(error?.response?.data ?? error.message ?? "Error in request...");
     });
 })
+
+module.exports = app;
